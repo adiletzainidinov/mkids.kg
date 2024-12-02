@@ -22,6 +22,7 @@ const SocialData = [
 ];
 
 const About = () => {
+  
   return (
     <>
       <MainContent>
@@ -57,7 +58,7 @@ const About = () => {
 
         <SocialMedia>
           {SocialData.map((item) => (
-            <Instagram key={item.id}>
+            <Instagram key={item.id}  >
               {item.icon}
               <p>
                 {item.text} <br />

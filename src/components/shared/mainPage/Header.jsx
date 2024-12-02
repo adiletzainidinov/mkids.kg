@@ -12,8 +12,8 @@ const Header = () => {
           <GiHamburgerMenu size={28} color="#fff" />
           <img src={logo} alt="logo" style={{ width: 50, height: 50 }} />
           <div>
-            <MdLanguage size={28} color='white' />
-            <AiOutlineCaretDown color='white' />
+            <MdLanguage size={28} color="white" />
+            <AiOutlineCaretDown color="white" />
           </div>
         </MainContent>
       </Container>
@@ -28,6 +28,8 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 `;
 
 const MainContent = styled.div`

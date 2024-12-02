@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Header from './Header';
 import About from './About';
 import VideoBackground from './VideoBackground';
 
@@ -7,7 +6,6 @@ const MainPage = () => {
   return (
     <Container>
       <MainContent>
-        <Header />
         <About />
         <VideoBackground />
       </MainContent>
@@ -22,6 +20,7 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  margin-top: -70px;
 `;
 
 const MainContent = styled.div`
