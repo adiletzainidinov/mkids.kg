@@ -48,7 +48,7 @@ const Price = () => {
   });
 
   return (
-    <Container>
+    <Container id="priceSection">
       <StyledBox>
         <BoxContainer>
           <TextContent>

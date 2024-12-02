@@ -22,7 +22,13 @@ const SocialData = [
 ];
 
 const About = () => {
-  
+  const scrollToPriceSection = () => {
+    const priceSection = document.getElementById('priceSection');
+    if (priceSection) {
+      priceSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <MainContent>
@@ -30,7 +36,7 @@ const About = () => {
         <SubTitle>Образовательная платформа для детей</SubTitle>
 
         <Buttons>
-          <Button>
+          <Button onClick={scrollToPriceSection}>
             УЗНАТЬ О ПРОГРАММЕ
             <PiArticleMedium
               style={{
@@ -58,7 +64,7 @@ const About = () => {
 
         <SocialMedia>
           {SocialData.map((item) => (
-            <Instagram key={item.id}  >
+            <Instagram key={item.id}>
               {item.icon}
               <p>
                 {item.text} <br />

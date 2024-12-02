@@ -1,6 +1,6 @@
 import { BoxContainer, Container, StyledBox, TextContainer } from './AboutUmraStyle';
 
-const AboutIslamicValues = () => {
+const AboutUmra = () => {
   return (
     <>
       <Container>
@@ -29,4 +29,4 @@ const AboutIslamicValues = () => {
   );
 };
 
-export default AboutIslamicValues;
+export default AboutUmra;
