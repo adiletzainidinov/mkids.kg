@@ -51,6 +51,7 @@ const ReveivWidthVideo = () => {
                     title="green iguana"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    controls
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
