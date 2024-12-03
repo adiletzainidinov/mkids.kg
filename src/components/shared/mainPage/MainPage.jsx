@@ -4,7 +4,7 @@ import VideoBackground from './VideoBackground';
 
 const MainPage = () => {
   return (
-    <Container>
+    <Container id='mainPage'>
       <MainContent>
         <About />
         <VideoBackground />

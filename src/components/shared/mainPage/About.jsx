@@ -5,6 +5,8 @@ import { IoIosSchool } from 'react-icons/io';
 import { RiInstagramFill } from 'react-icons/ri';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import { RiArrowDownDoubleFill } from 'react-icons/ri';
+import { scrollToElement } from '../../../utils/shared/scrollUtils';
+import { handleSocialClick } from '../../../utils/shared/gotuSoccial';
 
 const SocialData = [
   {
@@ -12,22 +14,20 @@ const SocialData = [
     text: 'Мы в',
     social: 'Instagram',
     icon: <RiInstagramFill size={40} />,
+    url: 'https://www.instagram.com/mkids.kg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
   },
   {
     id: 2,
     text: 'НАПИШИТЕ НА',
     social: 'WhatsApp',
     icon: <IoLogoWhatsapp size={40} />,
+    url: 'https://wa.me/996706660241',
   },
 ];
 
 const About = () => {
-  const scrollToPriceSection = () => {
-    const priceSection = document.getElementById('priceSection');
-    if (priceSection) {
-      priceSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const scrollToPriceSection = () => scrollToElement('priceSection');
+  const scrollfooterContacts = () => scrollToElement('footerContacts');
 
   return (
     <>
@@ -48,7 +48,7 @@ const About = () => {
               }}
             />
           </Button>
-          <Button>
+          <Button onClick={scrollfooterContacts}>
             НАЧАТЬ ОБУЧЕНИЕ
             <IoIosSchool
               style={{
@@ -64,7 +64,7 @@ const About = () => {
 
         <SocialMedia>
           {SocialData.map((item) => (
-            <Instagram key={item.id}>
+            <Instagram key={item.id} onClick={() => handleSocialClick(item.url)}>
               {item.icon}
               <p>
                 {item.text} <br />

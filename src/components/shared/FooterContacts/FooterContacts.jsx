@@ -1,4 +1,4 @@
-
+import { handleSocialClick } from '../../../utils/shared/gotuSoccial';
 import {
   BoxContainer,
   ButtonStyle,
@@ -13,21 +13,25 @@ import { MdOutlineMessage } from 'react-icons/md';
 const FooterContactsData = [
   {
     id: 1,
-    number: '+ 996 999 99 99 99',
+    number: '+996 706 660 241',
     // icon: 'logo-whatsapp',
     write: 'НАПИСАТЬ WHATSAPP',
+    url: 'https://wa.me/996706660241',
+    tel: 'tel:996706660241',
   },
   {
     id: 2,
-    number: '+ 996 999 99 99 99',
+    number: '+996 706 660 241',
     // telegram: <FaTelegramPlane />,
     write: 'НАПИСАТЬ TELEGRAM',
+    url: 'https://t.me/b_suiunbekovna01',
+    tel: 'tel:996706660241',
   },
 ];
 
 const FooterContacts = () => {
   return (
-    <Container>
+    <Container id="footerContacts">
       <StyledBox>
         <BoxContainer>
           <h2>Контакты</h2>
@@ -35,13 +39,16 @@ const FooterContacts = () => {
             {FooterContactsData.map((item) => (
               <LeftContactsFooter key={item.id}>
                 <FooterFlex>
-                  <p className="call-out">
+                  <p
+                    className="call-out"
+                    onClick={() => handleSocialClick(item.tel)}
+                  >
                     <span className="call">
                       <ion-icon name="call-outline"></ion-icon>
                     </span>
                     {item.number}
                   </p>
-                  <ButtonStyle>
+                  <ButtonStyle onClick={() => handleSocialClick(item.url)}>
                     <div className="or">
                       <p>ИЛИ</p>
                     </div>

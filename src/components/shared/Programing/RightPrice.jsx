@@ -6,6 +6,7 @@ import {
     InformationRight,
     LineRightPrice,
   } from './PriceStyle';
+import { scrollToElement } from '../../../utils/shared/scrollUtils';
   
   const PriceRightCardData = [
     {
@@ -74,15 +75,18 @@ import {
   
   
   const RightPrice = () => {
+    const scrollfooterContacts = () => scrollToElement('footerContacts');
+
+    
     return (
       <CardRightPrice>
         <div className="ribbon">ВСЕ ВКЛЮЧЕНО</div>
         <h2>СТОИМОСТЬ КУРСА</h2>
-        <p>за три месяца обучения</p>
+        <p>за 12 уроков</p>
         <h3>
           <span></span>9000<span className="dollar">сом</span>
         </h3>
-        <h4>за 12 уроков</h4>
+        <h4>за три месяца обучения</h4>
         {PriceRightCardData.map((item) => (
           <InformationRight key={item.id}>
             <div className="papaIconTextRight">
@@ -94,7 +98,7 @@ import {
             <LineRightPrice></LineRightPrice>
           </InformationRight>
         ))}
-        <ButtonRightPrice>НАЧАТЬ ОБУЧЕНИЕ
+        <ButtonRightPrice onClick={scrollfooterContacts}>НАЧАТЬ ОБУЧЕНИЕ
         <IoIosSchool
               style={{
                 position: 'absolute',

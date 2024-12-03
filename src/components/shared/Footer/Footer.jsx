@@ -1,7 +1,9 @@
 import { Box, Typography, Link, Container, Grid } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { ContainerFooter, StyledBox } from './footerStyle';
-import { Telegram, WhatsApp, YouTube } from '@mui/icons-material';
+import { Telegram, WhatsApp } from '@mui/icons-material';
+import { scrollToElement } from '../../../utils/shared/scrollUtils';
+import { handleSocialClick } from '../../../utils/shared/gotuSoccial';
 
 const Footer = () => {
   return (
@@ -22,7 +24,7 @@ const Footer = () => {
             <Grid container spacing={4} justifyContent="space-between">
               <Grid item xs={12} md={6}>
                 <Typography variant="h6" gutterBottom>
-                О нашем курсе
+                  О нашем курсе
                 </Typography>
                 <Typography variant="body2" color="white">
                   Курс помогает детям узнать исламские ценности, учит уважению,
@@ -34,16 +36,40 @@ const Footer = () => {
                 <Typography variant="h6" gutterBottom>
                   Полезные ссылки
                 </Typography>
-                <Link href="#" color="inherit" variant="body2">
+                <Link
+                  onClick={() => scrollToElement('mainPage')}
+                  color="inherit"
+                  variant="body2"
+                  style={{ textDecoration: 'none' }}
+                >
                   Главная
                 </Link>
                 <br />
-                <Link href="#" color="inherit" variant="body2">
-                  О нас
+                <Link
+                  color="inherit"
+                  variant="body2"
+                  style={{ textDecoration: 'none' }}
+                  onClick={() => scrollToElement('priceSection')}
+                >
+                  О программе
                 </Link>
                 <br />
-                <Link href="#" color="inherit" variant="body2">
+                <Link
+                  color="inherit"
+                  variant="body2"
+                  style={{ textDecoration: 'none' }}
+                  onClick={() => scrollToElement('footerContacts')}
+                >
                   Контакты
+                </Link>
+                <br />
+                <Link
+                  color="inherit"
+                  variant="body2"
+                  style={{ textDecoration: 'none' }}
+                  onClick={() => handleSocialClick('https://2gis.kg/bishkek/geo/70030076166070531')}
+                >
+                  Адрес
                 </Link>
               </Grid>
 
@@ -52,16 +78,30 @@ const Footer = () => {
                   Следите за нами
                 </Typography>
                 <Box sx={{ display: 'flex', gap: 2 }}>
-                  <Link href="#" color="inherit">
-                    <YouTube />
-                  </Link>
-                  <Link href="#" color="inherit">
-                    <WhatsApp />
-                  </Link>
-                  <Link href="#" color="inherit">
+                  <Link
+                    onClick={() =>
+                      handleSocialClick(
+                        'https://www.instagram.com/mkids.kg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+                      )
+                    }
+                    color="inherit"
+                  >
                     <InstagramIcon />
                   </Link>
-                  <Link href="#" color="inherit">
+                  <Link
+                    onClick={() =>
+                      handleSocialClick('https://wa.me/996706660241')
+                    }
+                    color="inherit"
+                  >
+                    <WhatsApp />
+                  </Link>
+                  <Link
+                    onClick={() =>
+                      handleSocialClick('https://t.me/b_suiunbekovna01')
+                    }
+                    color="inherit"
+                  >
                     <Telegram />
                   </Link>
                 </Box>
@@ -69,9 +109,15 @@ const Footer = () => {
             </Grid>
 
             <Box mt={4} textAlign="center">
-              <Typography variant="body2" color="white">
+              <Typography
+                variant="body2"
+                color="white"
+                onClick={() =>
+                  handleSocialClick('https://t.me/Makka567')
+                }
+              >
                 &copy; {new Date().getFullYear()} Сайт создал Адилет{' '}
-                <Link href="https://t.me/Makka567" color="inherit">
+                <Link color="inherit">
                   <Telegram sx={{ position: 'relative', top: 7 }} />
                 </Link>
               </Typography>
