@@ -20,16 +20,16 @@ const RevievWithVideoData = [
     src: revievWithvideoInstagram,
     title: 'Как занятия изменили жизнь Айсулуу: отзыв мамы',
   },
-  {
-    id: 2,
-    src: revievWithvideoInstagram,
-    title: 'История маленького Мансура: первый шаг к знанию',
-  },
-  {
-    id: 3,
-    src: revievWithvideoInstagram,
-    title: 'Отзыв семьи Алии о важности исламского воспитания',
-  },
+  // {
+  //   id: 2,
+  //   src: revievWithvideoInstagram,
+  //   title: 'История маленького Мансура: первый шаг к знанию',
+  // },
+  // {
+  //   id: 3,
+  //   src: revievWithvideoInstagram,
+  //   title: 'Отзыв семьи Алии о важности исламского воспитания',
+  // },
 ];
 
 const ReveivWidthVideo = () => {
@@ -44,15 +44,19 @@ const ReveivWidthVideo = () => {
             {RevievWithVideoData.map((item) => (
               <Card key={item.id} sx={{ maxWidth: 345, marginBottom: 4 }}>
                 <CardActionArea>
-                  <CardMedia
-                    component="iframe"
-                    height="330"
-                    src={item.src}
-                    title="green iguana"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    controls
-                  />
+                  <CardMedia>
+                    <video
+                      width="100%"
+                      height="100%"
+                      controls
+                      poster={
+                        'https://i.pinimg.com/736x/43/4a/a5/434aa513587e452a79ec62af83e848c1.jpg'
+                      }
+                    >
+                      <source src={item.src} type="video/mp4" />
+                      Ваш браузер не поддерживает воспроизведение видео.
+                    </video>
+                  </CardMedia>
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       {item.title}

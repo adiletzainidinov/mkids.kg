@@ -174,6 +174,5 @@ export const ButtonStyle = styled(Button)(() => ({
   maxWidth: '250px',
   margin: '0 auto',
   marginTop: 50,
-  padding: '20px',
   marginBottom: 80,
 }));
