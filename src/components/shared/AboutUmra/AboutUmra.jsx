@@ -3,7 +3,7 @@ import { BoxContainer, Container, StyledBox, TextContainer } from './AboutUmraSt
 const AboutUmra = () => {
   return (
     <>
-      <Container>
+      <Container id='AboutUmra'>
         <StyledBox>
           <BoxContainer>
             <h1>Почему важно воспитывать детей исламскими ценностями?</h1>

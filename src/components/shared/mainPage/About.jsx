@@ -74,7 +74,7 @@ const About = () => {
           ))}
         </SocialMedia>
 
-        <AnimationDiv>
+        <AnimationDiv onClick={() => scrollToElement('AboutUmra')}>
           <RiArrowDownDoubleFill />
         </AnimationDiv>
       </MainContent>
